@@ -5,7 +5,10 @@ import authLogin from '../assets/images/authLogin.jpg';
 import authRegister from '../assets/images/authRegister.jpg';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-export default function Layout({ children }: any) {
+interface Props {
+  children: React.ReactNode;
+}
+export default function Layout({ children }: Props) {
   const router = useRouter();
   return (
     <div className={styles.layout_container}>
