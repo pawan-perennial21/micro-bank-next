@@ -1,0 +1,24 @@
+.layout_container {
+  display: flex;
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+.banner_container {
+  flex: 1;
+}
+.banner_container > img {
+  width: 100%;
+  min-height: 99vh;
+  max-height: 99vh;
+}
+
+.form_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  height: 100vh;
+  flex-direction: column;
+}
