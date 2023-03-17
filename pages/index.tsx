@@ -1,7 +1,12 @@
 import type { NextPage } from 'next';
+import Navbar from '../components/Navbar';
 
 const Home: NextPage = () => {
-  return <div>Micro bank</div>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 };
 
 export default Home;
