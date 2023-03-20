@@ -7,6 +7,7 @@ export default function Registration() {
   const location = useRouter();
   console.log('location', location);
   const onFinish = (values: any) => {
+    console.log('Success:', values);
     const valuesAll = {
       ...values.user,
       dateOfIn: values['dateOfIn'].format('YYYY-MM-DD'),
@@ -47,7 +48,6 @@ export default function Registration() {
               required: true,
               message: 'Please enter your full name',
             },
-            // { validator: validateEmailOrPhone },
           ]}
         >
           <Input className={styles.input} />
@@ -81,7 +81,6 @@ export default function Registration() {
               required: true,
               message: 'Please enter your password',
             },
-            // { validator: validatorPassword },
           ]}
         >
           <Input.Password className={styles.input} />

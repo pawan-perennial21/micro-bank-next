@@ -14,3 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
+
+button:where(.css-dev-only-do-not-override-ph9edi).ant-btn-default:not(
+    :disabled
+  ):hover {
+  border: unset;
+  color: unset;
+}
+button:where(.css-dev-only-do-not-override-ph9edi).ant-btn-default:not(
+    :disabled
+  ):active {
+  border: unset;
+  color: unset;
+}

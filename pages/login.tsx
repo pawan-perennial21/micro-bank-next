@@ -1,20 +1,19 @@
 import React from 'react';
 import Layout from '../layout/layout';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, message } from 'antd';
 import styles from '../styles/layout.module.css';
 import { useRouter } from 'next/router';
-import { IUserCredential } from '../types';
 import { validateEmailOrPhone } from '../constants/validation';
 
 export default function Login() {
   const location = useRouter();
 
-  const onFinish = async (values: IUserCredential) => {
+  const onFinish = async (values: any) => {
     console.log(values);
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
+    message.error(errorInfo);
   };
 
   return (
@@ -36,7 +35,7 @@ export default function Login() {
           rules={[
             {
               required: true,
-              message: 'Please enter your email or phone number',
+              // message: 'Please enter your email or phone number',
             },
             { validator: validateEmailOrPhone },
           ]}
@@ -52,7 +51,6 @@ export default function Login() {
               required: true,
               message: 'Please enter your password',
             },
-            // { validator: validatorPassword },
           ]}
         >
           <Input.Password className={styles.input} />

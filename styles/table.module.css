@@ -1,0 +1,14 @@
+.table_wrapper {
+  border: 1px solid #ddd;
+}
+
+.table_wrapper th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #828282;
+}
+
+.table_wrapper td {
+  padding: 0px;
+  /* border: 1px solid #ddd; */
+}
