@@ -1,12 +1,11 @@
-import { Card, Radio, Button, Tabs } from 'antd';
+import { Button } from 'antd';
 import { useState } from 'react';
-const { TabPane } = Tabs;
+
 import styles from '../../styles/card.module.css';
 import DetailsTransaction from '../detailsTransaction';
 import SummaryCard from '../summaryCard';
-export function CustomCardWithTabs() {
+export function CustomCardWithTabs({ transactionData }: any) {
   const [activeTab, setActiveTab] = useState('1');
-
   const handleTabChange = (key: any) => {
     setActiveTab(key);
   };
@@ -55,7 +54,11 @@ export function CustomCardWithTabs() {
       ) : (
         ''
       )}
-      {activeTab === '2' ? <DetailsTransaction /> : ''}
+      {activeTab === '2' ? (
+        <DetailsTransaction transactionData={transactionData} />
+      ) : (
+        ''
+      )}
     </>
   );
 }

@@ -1,48 +1,10 @@
-import { Button, Card, Col, Typography, Table, Tag } from 'antd';
+import { Card, Col, Typography, Table } from 'antd';
 import Image from 'next/image';
 import Eye from '../../assets/icons/eye.svg';
 import Download from '../../assets/icons/download.svg';
 import React from 'react';
 import styles from '../../styles/table.module.css';
-export default function DetailsTransaction() {
-  const transactions = [
-    {
-      transactionId: '2011002039111',
-      date: '2022-01-01',
-      amount: 100,
-      status: 'pending',
-      action: 'view',
-    },
-    {
-      transactionId: 2011002039112,
-      date: '2022-01-02',
-      amount: 50,
-      status: 'completed',
-      action: 'view',
-    },
-    {
-      transactionId: 2011002039113,
-      date: '2022-01-03',
-      amount: 75,
-      status: 'pending',
-      action: 'view',
-    },
-    {
-      transactionId: 2011002039114,
-      date: '2022-01-04',
-      amount: 200,
-      status: 'cancelled',
-      action: 'view',
-    },
-    {
-      transactionId: 2011002039115,
-      date: '2022-01-04',
-      amount: 200,
-      status: 'cancelled',
-      action: 'view',
-    },
-  ];
-
+export default function DetailsTransaction({ transactionData }: any) {
   const columns = [
     {
       dataIndex: 'transactionId',
@@ -91,7 +53,7 @@ export default function DetailsTransaction() {
       <Col span={24}>
         <Table
           className={styles.table_wrapper}
-          dataSource={transactions}
+          dataSource={transactionData}
           pagination={false}
           columns={columns}
         />

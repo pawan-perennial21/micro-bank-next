@@ -1,7 +1,7 @@
 import { Layout } from 'antd';
 const { Content } = Layout;
 import type { NextPage } from 'next';
-import { CustomCardWithTabs } from '../components/card/card';
+import { CustomCardWithTabs } from '../components/card';
 
 import Navbar from '../components/navbar';
 
@@ -12,7 +12,8 @@ import payrollIcon from '../assets/icons/payroll.svg';
 import paymentIcon from '../assets/icons/payments.svg';
 import Footer from '../components/footer';
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ transactionData }: any) => {
+  console.log('aggagaga', transactionData);
   const currentService = [
     {
       icon: homeIcon,
@@ -53,7 +54,7 @@ const Home: NextPage = () => {
       <Navbar />
       <Layout style={{ background: '#E5E5E5' }}>
         <Content style={{ margin: '20px 24px' }}>
-          <CustomCardWithTabs />
+          <CustomCardWithTabs transactionData={transactionData} />
           <ServiceCardWrapper data={currentService} title="Current Services" />
           <ServiceCardWrapper
             data={availableService}
@@ -65,5 +66,13 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+// http://demo1681758.mockable.io/transaction
+
+export async function getServerSideProps() {
+  const res = await fetch(`http://demo1681758.mockable.io/transaction`);
+  const transactionData = await res.json();
+  return { props: { transactionData } };
+}
 
 export default Home;
