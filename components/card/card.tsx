@@ -17,13 +17,13 @@ export function CustomCardWithTabs() {
           background: '#ffffff',
           display: 'flex',
           alignItems: 'center',
-          boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.12) ',
           borderRadius: '12px',
           marginBottom: '30px',
           height: '60px',
         }}
       >
         <Button
+          type="text"
           onClick={() => handleTabChange('1')}
           className={
             activeTab === '1'
@@ -34,6 +34,7 @@ export function CustomCardWithTabs() {
           Summary
         </Button>
         <Button
+          type="text"
           className={
             activeTab === '2'
               ? `${styles.toggle_button} ${styles.slide_tab_red}`
